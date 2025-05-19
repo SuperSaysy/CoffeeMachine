@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CoffeeMachine.MVVM.ViewModel
+namespace CoffeeMachine.Core
 {
-    public class SettingsViewModel : Core.ViewModel
+    public abstract class ViewModel : ObservableObjects
     {
     }
 }

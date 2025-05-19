@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace CoffeeMachine.MVVM.ViewModel
 {
-    internal class HomeViewModel
+    public class HomeViewModel : Core.ViewModel
     {
     }
 }

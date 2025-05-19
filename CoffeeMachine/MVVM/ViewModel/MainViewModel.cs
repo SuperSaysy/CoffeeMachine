@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoffeeMachine.MVVM.ViewModel
 {
-    internal class MainViewModel
+    public class MainViewModel : Core.ViewModel
     {
     }
 }
