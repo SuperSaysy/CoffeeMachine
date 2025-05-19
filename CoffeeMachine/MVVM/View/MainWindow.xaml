@@ -7,6 +7,44 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
 
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="60"/>
+            </Grid.ColumnDefinitions>
+
+            <WrapPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <Button Content="Home" Width="100" Margin="10"
+                        Padding="10" FontSize="14" FontWeight="Bold"
+                        Command="{Binding Path=NavigateToHomeCommand}"></Button>
+                
+            </WrapPanel>
+
+            <Button Width="60" Grid.Column="2" Grid.Row="0"
+                    Background="Transparent" BorderThickness="0"
+                    Command="{Binding Path=NavigateToSettingsCommand}">
+                <Image Source="/Assets/Images/MainWindow/gears_cogwheel_settings_icon_187128.png"/>
+            </Button> 
+            
+        </Grid>
+
+        <ContentControl Grid.Row="1" Content="{Binding Path=NavigationService.CurrentView}">
+            
+        </ContentControl>
+
+
+        <StatusBar Grid.Row="2">
+            <StatusBarItem Content="Status:" FontSize="13"></StatusBarItem>
+        </StatusBar>
     </Grid>
 </Window>

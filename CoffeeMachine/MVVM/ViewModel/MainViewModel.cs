@@ -22,15 +22,15 @@ namespace CoffeeMachine.MVVM.ViewModel
             }
         }
 
-        public RelayCommand NavigateHomeCommand { get; set; }
-        public RelayCommand NavigateSettingsCommand { get; set; }
+        public RelayCommand NavigateToHomeCommand { get; set; }
+        public RelayCommand NavigateToSettingsCommand { get; set; }
 
         public MainViewModel(INavigationService navigationService)
         {
             NavigationService = navigationService;
-            NavigateHomeCommand = new RelayCommand(o => { NavigationService.NavigateTo<HomeViewModel>(); }, o => true);
-            NavigateSettingsCommand = new RelayCommand(o => { NavigationService.NavigateTo<SettingsViewModel>(); }, o => true);
+            NavigateToHomeCommand = new RelayCommand(o => { NavigationService.NavigateTo<HomeViewModel>(); }, o => true);
+            NavigateToSettingsCommand = new RelayCommand(o => { NavigationService.NavigateTo<SettingsViewModel>(); }, o => true);
         }
     }
 }
-}
+
