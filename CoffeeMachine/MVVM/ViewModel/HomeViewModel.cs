@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CoffeeMachine.Core;
+using CoffeeMachine.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
