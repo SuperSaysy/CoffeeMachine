@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CoffeeMachine.Core
 {
-    public class ObservableObjects : INotifyPropertyChanged
+    public class ObservableObject : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged;
 

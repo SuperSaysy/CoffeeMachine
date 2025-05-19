@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoffeeMachine.Services
 {
-    public class NavigationService
+    public class NavigationService : ObservableObjec
     {
 
     }

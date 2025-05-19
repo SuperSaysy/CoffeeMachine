@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoffeeMachine.Core
 {
-    public abstract class ViewModel : ObservableObjects
+    public abstract class ViewModel : ObservableObject
     {
     }
 }
