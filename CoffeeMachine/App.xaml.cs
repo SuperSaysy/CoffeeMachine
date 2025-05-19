@@ -1,8 +1,11 @@
-﻿using CoffeeMachine.MVVM.ViewModel;
+﻿using CoffeeMachine.Core;
+using CoffeeMachine.MVVM.ViewModel;
+using CoffeeMachine.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System.Configuration;
 using System.Data;
 using System.Windows;
+
 
 namespace CoffeeMachine
 {
@@ -24,7 +27,9 @@ namespace CoffeeMachine
             services.AddSingleton<MainViewModel>();
             services.AddSingleton<HomeViewModel>();
             services.AddSingleton<SettingsViewModel>();
-   
+            services.AddSingleton<INavigationService,NavigationService>();
+
+            services.AddSingleton<Func<Type, ViewModel>>(serviceProvider => viewModelType => (ViewModel)serviceProvider.GetRequiredService(viewModelType));
 
             _serviceProvider = services.BuildServiceProvider();
 
