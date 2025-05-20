@@ -1,4 +1,5 @@
 ﻿using CoffeeMachine.Core;
+using CoffeeMachine.MVVM.Model;
 using CoffeeMachine.Services;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace CoffeeMachine.MVVM.ViewModel
     {
         private INavigationService _navigationService;
         private string _status;
+        private Settings _settings;
         public INavigationService NavigationService
         {
             get => _navigationService;
@@ -31,6 +33,17 @@ namespace CoffeeMachine.MVVM.ViewModel
             }
         }
 
+        public Settings Settings
+        {
+            get => _settings;
+            set
+            {
+                _settings = value;
+                OnPropertyChanged(nameof(Settings));
+            }
+        }
+
+
         public RelayCommand NavigateToHomeCommand { get; set; }
         public RelayCommand NavigateToSettingsCommand { get; set; }
 
@@ -40,6 +53,7 @@ namespace CoffeeMachine.MVVM.ViewModel
             NavigateToHomeCommand = new RelayCommand(o => { NavigationService.NavigateTo<HomeViewModel>(this);}, o => true);
             NavigateToSettingsCommand = new RelayCommand(o => { NavigationService.NavigateTo<SettingsViewModel>(this); }, o => true);
             Status = "Ready";
+            Settings = new Settings();
         }
     }
 }
