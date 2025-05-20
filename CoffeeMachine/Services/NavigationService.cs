@@ -10,9 +10,9 @@ namespace CoffeeMachine.Services
     public class NavigationService : ObservableObject, INavigationService
     {
         private readonly Func<Type, ViewModel> _viewModelFactory;
-        private ViewModel _currentView;
+        private ISubViewModel _currentView;
 
-        public ViewModel CurrentView
+        public ISubViewModel CurrentView
         {
             get => _currentView;
             private set
@@ -27,10 +27,13 @@ namespace CoffeeMachine.Services
             _viewModelFactory = viewModelFactory;
         }
 
-        public void NavigateTo<TViewmodel>() where TViewmodel : ViewModel
+        public void NavigateTo<TViewmodel>(ViewModel mainViewModel) where TViewmodel : ViewModel
         {
             ViewModel viewModel = _viewModelFactory.Invoke(typeof(TViewmodel));
-            CurrentView = viewModel;
+            CurrentView = (ISubViewModel)viewModel;
+           
         }
+
+       
     }
 }

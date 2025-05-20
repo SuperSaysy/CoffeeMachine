@@ -13,14 +13,14 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
             <RowDefinition/>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0" Grid.Column="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="100"/>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="80"/>
             </Grid.ColumnDefinitions>
 
             <Image Source="/Assets/Images/MainWindow/coffee-icon.png" Grid.Column="0" Grid.Row="0" Height="50" Width="50"></Image>
@@ -46,7 +46,7 @@
 
 
         <StatusBar Grid.Row="2">
-            <StatusBarItem Content="Status:" FontSize="13"></StatusBarItem>
+            <StatusBarItem Content="{Binding Path=Status, UpdateSourceTrigger=PropertyChanged}" FontSize="13"></StatusBarItem>
         </StatusBar>
     </Grid>
 </Window>

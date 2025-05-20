@@ -9,8 +9,8 @@ namespace CoffeeMachine.Services
 {
     public interface INavigationService
     {
-        ViewModel CurrentView { get; }
-        void NavigateTo<T>() where T : ViewModel;
+        ISubViewModel CurrentView { get; }
+        void NavigateTo<T>(ViewModel mainViewModel) where T : ViewModel;
 
     }
 }

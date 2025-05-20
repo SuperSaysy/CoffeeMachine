@@ -9,7 +9,20 @@ using System.Threading.Tasks;
 
 namespace CoffeeMachine.MVVM.ViewModel
 {
-    public class HomeViewModel : Core.ViewModel
+    public class HomeViewModel : Core.ViewModel, ISubViewModel
     {
+        public Core.ViewModel MainViewModel
+        {
+            get => MainViewModel;
+            private set
+            {
+                MainViewModel = value;
+            }
+        }
+
+        public void UpdateMainViewModel(Core.ViewModel mainViewModel)
+        {
+            MainViewModel = mainViewModel;
+        }
     }
 }
