@@ -23,6 +23,8 @@
                 <ColumnDefinition Width="60"/>
             </Grid.ColumnDefinitions>
 
+            <Image Source="/Assets/Images/MainWindow/coffee-icon.png" Grid.Column="0" Grid.Row="0" Height="50" Width="50"></Image>
+            
             <WrapPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center">
                 <Button Content="Home" Width="100" Margin="10"
                         Padding="10" FontSize="14" FontWeight="Bold"
