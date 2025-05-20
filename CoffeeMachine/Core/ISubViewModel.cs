@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoffeeMachine.MVVM.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,7 @@ namespace CoffeeMachine.Core
     /// </summary>
     public interface ISubViewModel
     {
-        ViewModel MainViewModel { get; }
+        MainViewModel MainViewModel { get; }
         void UpdateMainViewModel(ViewModel mainViewModel);
     }
 }

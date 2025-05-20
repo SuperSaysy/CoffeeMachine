@@ -9,18 +9,20 @@ namespace CoffeeMachine.MVVM.ViewModel
 {
     public class SettingsViewModel : Core.ViewModel, ISubViewModel
     {
-        public Core.ViewModel MainViewModel
+        private MainViewModel _mainViewModel;
+        public MainViewModel MainViewModel
         {
-            get => MainViewModel;
+            get => _mainViewModel;
             private set 
             {
-                MainViewModel = value;
+                _mainViewModel = value;
+                OnPropertyChanged(nameof(MainViewModel));
             }
         }
 
         public void UpdateMainViewModel(Core.ViewModel mainViewModel)
         {
-            MainViewModel = mainViewModel;
+            MainViewModel = mainViewModel as MainViewModel;
         }
     }
 }

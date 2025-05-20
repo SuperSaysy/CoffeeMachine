@@ -31,6 +31,7 @@ namespace CoffeeMachine.Services
         {
             ViewModel viewModel = _viewModelFactory.Invoke(typeof(TViewmodel));
             CurrentView = (ISubViewModel)viewModel;
+            CurrentView.UpdateMainViewModel(mainViewModel);
            
         }
 
