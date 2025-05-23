@@ -10,8 +10,12 @@
 
     <Window.Resources>
         <Style TargetType="Label">
-            <Setter Property="FontSize" Value="50"/>
-            <Setter Property="Foreground" Value="Green"/>
+            <Setter Property="FontSize" Value="{Binding Path=Settings.FontSize}"/>
+            <Setter Property="Foreground" Value="{Binding Path=Settings.ActiveTheme.FontColor}"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="{Binding Path=Settings.FontSize}"/>
+            <Setter Property="Foreground" Value="{Binding Path=Settings.ActiveTheme.FontColor}"/>
         </Style>
     </Window.Resources>
     <Grid>

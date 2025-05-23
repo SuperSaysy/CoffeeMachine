@@ -6,12 +6,23 @@
              xmlns:local="clr-namespace:CoffeeMachine.MVVM.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
     
-    <Grid Background="White">
+
+    <Grid>
+
+        <Grid.Resources>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="{Binding Path=MainViewModel.Settings.FontSize}"/>
+                <Setter Property="Foreground" Value="{Binding Path=MainViewModel.Settings.ActiveTheme.FontColor}"/>
+            </Style>
+        
+        </Grid.Resources>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -29,7 +40,13 @@
                     </WrapPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
-            
         </ListBox>
+
+        <WrapPanel Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <Button x:Name="FontDown" Content="↓" Command="{Binding Path=FontDownCommand}"/>
+            <Label Content="{Binding Path=MainViewModel.Settings.FontSize , UpdateSourceTrigger=PropertyChanged}" FontSize="{Binding Path=MainViewModel.Settings.FontSize , UpdateSourceTrigger=PropertyChanged}"/>
+            <Button x:Name="FontUP" Content="↑" Command="{Binding Path=FontUpCommand}" />
+        </WrapPanel>
+        
     </Grid>
 </UserControl>

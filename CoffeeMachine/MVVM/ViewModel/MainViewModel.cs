@@ -55,6 +55,9 @@ namespace CoffeeMachine.MVVM.ViewModel
             Status = "Ready";
             Settings = new Settings();
         }
+
+
+
     }
 }
 
