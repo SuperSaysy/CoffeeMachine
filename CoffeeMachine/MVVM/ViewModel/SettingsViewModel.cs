@@ -1,4 +1,5 @@
 ﻿using CoffeeMachine.Core;
+using CoffeeMachine.MVVM.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,6 @@ namespace CoffeeMachine.MVVM.ViewModel
                 OnPropertyChanged(nameof(MainViewModel));
             }
         }
-
         public void UpdateMainViewModel(Core.ViewModel mainViewModel)
         {
             MainViewModel = mainViewModel as MainViewModel;

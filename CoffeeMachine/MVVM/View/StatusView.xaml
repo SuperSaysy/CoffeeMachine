@@ -7,7 +7,29 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     
-    <Grid>
-        
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="SettingsHeader" Content="Settings" Grid.Row="0" Grid.Column="0" 
+               HorizontalAlignment="Center" VerticalAlignment="Center"
+               FontSize="24" FontWeight="Bold"></Label>
+        <ListBox ItemsSource="{Binding Path=MainViewModel.Settings.Themes}" SelectedItem="{Binding Path=MainViewModel.Settings.ActiveTheme}" 
+                 SelectionMode="Single" Grid.Column="0" Grid.Row="1" VerticalAlignment="Stretch">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <Label Content="{Binding ThemeName}" Background="{Binding BackgroundColor}" Foreground="{Binding FontColor}"/>
+                    </WrapPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            
+        </ListBox>
     </Grid>
 </UserControl>

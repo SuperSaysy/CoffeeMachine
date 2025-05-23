@@ -8,6 +8,12 @@
         Title="MainWindow" Height="450" Width="800"
         Background="{Binding Path=Settings.ActiveTheme.BackgroundColor}">
 
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="50"/>
+            <Setter Property="Foreground" Value="Green"/>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

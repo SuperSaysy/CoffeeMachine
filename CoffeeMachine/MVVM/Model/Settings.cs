@@ -21,8 +21,14 @@ namespace CoffeeMachine.MVVM.Model
         public Settings()
         {
             Themes = new List<Theme>();
-            _activeTheme = new Theme("Darkmode",new SolidColorBrush(Colors.Black),new SolidColorBrush(Colors.White));
+            Theme new01 = new Theme("Cremy",new SolidColorBrush(Colors.AntiqueWhite),new SolidColorBrush(Colors.Black));
+            Theme new02 = new Theme("Bright",new SolidColorBrush(Colors.White),new SolidColorBrush(Colors.Black));
+            Theme new03 = new Theme("Darkmode",new SolidColorBrush(Colors.Black),new SolidColorBrush(Colors.White));
             FontSize = 12;
+            Themes.Add(new01);
+            Themes.Add(new02);
+            Themes.Add(new03);
+            ActiveTheme = new01;
         }
 
     }
