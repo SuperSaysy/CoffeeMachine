@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CoffeeMachine"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Background="{Binding Path=Settings.ActiveTheme.BackgroundColor}">
+        Title="MainWindow" Height="450" Width="800"
+        Background="{Binding Path=Settings.ActiveTheme.BackgroundColor}">
+
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
